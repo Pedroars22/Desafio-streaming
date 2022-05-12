@@ -1,4 +1,4 @@
-import UsuarioRepository from "../repositories/usuarioRepository.js"
+import UsuarioRepository from "../repositories/usuarioRepository.js";
 
 async function createUsuario(usuario) {
     return await UsuarioRepository.insertUsuario(usuario);

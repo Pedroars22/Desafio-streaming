@@ -1,4 +1,4 @@
-import { connect } from "./db.js"
+import { connect } from "./db.js";
 
 async function insertUsuario(usuario) {
     const conn = await connect();
