@@ -3,7 +3,8 @@ import cors from "cors"; //posso tirar
 import winston from "winston";
 import usuariosRouter from "./src/routes/usuariosRoute.js";
 import filmesRouter from "./src/routes/filmesRoute.js";
-import seriesRouter from "./src/routes/seriesRoute.js"
+import seriesRouter from "./src/routes/seriesRoute.js";
+import assistidoRouter from "./src/routes/assistindoRoute.js";
 
 const { combine, timestamp, label, printf } = winston.format;
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -29,6 +30,7 @@ app.use(cors());
 app.use("/usuario", usuariosRouter);
 app.use("/filme", filmesRouter);
 app.use("/serie", seriesRouter);
+app.use("/assistido", assistidoRouter)
 app.use((err, req, res, next) => {
     logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);
     res.status(400).send({ error: err.message })

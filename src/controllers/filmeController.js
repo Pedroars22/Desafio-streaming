@@ -3,7 +3,7 @@ import FilmeService from "../services/filmeService.js";
 async function createFilme(req, res, next) {
     try {
         let filme = req.body;
-        if(!filme.titulo || !filme.genero || !filme.ano_lancamento || !filme.sinopse) {
+        if(!filme.titulo || !filme.genero || !filme.anoLancamento || !filme.sinopse) {
             throw new Error("Os campos título, gênero, ano de lançamento e sinopse devem ser preenchidos");
         }
         filme = await FilmeService.createFilme(filme);
@@ -34,7 +34,7 @@ async function getFilme(req, res, next) {
 async function updateFilme(req, res, next) {
     try {
         let filme = req.body;
-        if(!filme.filme_id || !filme.titulo || !filme.genero || !filme.ano_lancamento || !filme.sinopse) {
+        if(!filme.filmeId || !filme.titulo || !filme.genero || !filme.anoLancamento || !filme.sinopse) {
             throw new Error("Os campos título, gênero, ano de lançamento e sinopse devem ser preenchidos");
         }
         filme = await FilmeService.updateFilme(filme);

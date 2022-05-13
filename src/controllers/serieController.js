@@ -3,7 +3,7 @@ import SerieService from "../services/serieService.js";
 async function createSerie(req, res, next) {
     try {
         let serie = req.body;
-        if (!serie.titulo || !serie.genero || !serie.qtd_temporadas || !serie.sinopse) {
+        if (!serie.titulo || !serie.genero || !serie.qtdTemporadas || !serie.sinopse) {
             throw new Error("Os campos título, gênero, quantidade de temporadas e sinopse devem ser preenchidos");
         }
         serie = await SerieService.createSerie(serie);
@@ -34,7 +34,7 @@ async function getSerie(req, res, next) {
 async function updateSerie(req, res, next) {
     try {
         let serie = req.body;
-        if (!serie.serie_id || !serie.titulo || !serie.genero || !serie.qtd_temporadas || !serie.sinopse) {
+        if (!serie.serieId || !serie.titulo || !serie.genero || !serie.qtdTemporadas || !serie.sinopse) {
             throw new Error("Os campos título, gênero, quantidade de temporadas e sinopse devem ser preenchidos");
         }
         serie = await SerieService.updateSerie(serie);

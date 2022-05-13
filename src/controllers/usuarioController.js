@@ -36,7 +36,7 @@ async function getUsuario(req, res, next) {
 async function updateUsuario(req, res, next) {
     try {
         let usuario = req.body;
-        if (!usuario.usuario_id || !usuario.nome || !usuario.email || !usuario.senha) {
+        if (!usuario.usuarioId || !usuario.nome || !usuario.email || !usuario.senha) {
             throw new Error("Os campos Usuario ID, nome, email e senha são obrigatórios.")
         }
         usuario = await UsuarioService.updateUsuario(usuario);
